@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../assets/js/vue.min.js"></script>
+</head>
+<body>
+  <h1>component-1</h1>
+  <hr>
+  <div id="app">
+<!--    <jspang></jspang>-->
+<!--    <panda></panda>-->
+    <fxf></fxf>
+    <didi></didi>
+    <haha></haha>
+  </div>
+<!--  <script type="text/javascript">-->
+<!--    Vue.component('jspang',{-->
+<!--      template:`<div style="color:red">我是全局的jspang组件</div>`-->
+<!--    })-->
+<!--    var app = new Vue({-->
+<!--      el:'#app',-->
+<!--      components:{-->
+<!--        "panda":{-->
+<!--          template:`<div style="color:green">我是局部的panda组件</div>`-->
+<!--        }-->
+<!--      }-->
+<!--    })-->
+<!--    -->
+<!--  </script>-->
+  <script type="text/javascript">
+    Vue.component('fxf',{
+      template:`<div style="color:yellow">冯新发</div>`
+    })
+    var app = new Vue({
+      el:'#app',
+      // 需要注意的是，构造器里的components 是加s的，而全局注册是不加s的
+      components: {
+        "didi":{
+          template:`<div style="color:blue">xixi</div>`
+        },
+        "haha":{
+          template:`<div style="color:purple">haha</div>`
+        }
+      }
+    })
+  </script>
+</body>
+</html>

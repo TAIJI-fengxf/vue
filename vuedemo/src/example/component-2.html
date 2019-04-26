@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../assets/js/vue.min.js"></script>
+</head>
+<body>
+<h1>component-2</h1>
+<hr>
+<div id="app">
+<!--  <panda :here="message"></panda>-->
+<!--  在写属性时经常会加入’-‘来进行分词，比如：，那这时我们在props里如果写成props:[‘form-here’]是错误的，我们必须用小驼峰式写法props:[‘formHere’]-->
+<!--  <panda from-here="China"></panda>-->
+  <panda here="China"></panda>
+</div>
+<script type="text/javascript">
+  var app = new Vue({
+    el:'#app',
+    // data:{
+    //   message:'chengdu'
+    // },
+    components:{
+      "panda":{
+        template:`<div style="color: green">Panda from {{ here }}</div>`,
+        // props选项就是设置和获取标签上的属性值的，例如我们有一个自定义的组件,这时我们想给他加个标签属性写成 意思就是熊猫来自中国，当然这里的China可以换成任何值。定义属性的选项是props。
+        props:['here']
+        // template:`<div style="color: green">Panda from {{ fromHere }}</div>`,
+        // props:['fromHere']
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
